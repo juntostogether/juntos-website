@@ -1,6 +1,7 @@
 // app/page.tsx
 import Image from 'next/image'
 import Link from 'next/link'
+import DonateButton from '@/components/DonateButton'
 
 export default function HomePage() {
   return (
@@ -25,9 +26,7 @@ export default function HomePage() {
               <Link href="/resources" className="text-gray-600 hover:text-gray-900 transition">
                 Resources
               </Link>
-              <button className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition">
-                Donate
-              </button>
+              <DonateButton className="px-6 py-2 rounded-full" />
             </div>
             <button className="md:hidden p-2">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -210,9 +209,12 @@ export default function HomePage() {
             Juntos is 100% community-funded. Your donation helps us maintain our servers, 
             improve the app, and keep this service free for everyone who needs it.
           </p>
-          <button className="bg-white text-gray-900 text-lg px-10 py-4 rounded-full hover:bg-gray-100 transition font-semibold">
+          <DonateButton 
+            variant="secondary" 
+            className="text-lg px-10 py-4 rounded-full"
+          >
             Donate Now
-          </button>
+          </DonateButton>
         </div>
       </section>
 
