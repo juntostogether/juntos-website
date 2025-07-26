@@ -1,6 +1,6 @@
 // Stripe Payment Link configuration
 // Replace this with your actual Stripe Payment Link URL
-export const STRIPE_PAYMENT_LINK = 'https://buy.stripe.com/test_XXXXXXXXXX';
+export const STRIPE_PAYMENT_LINK = 'https://buy.stripe.com/test_cNi8wR8bk0CLcOudRe4F200';
 
 // Optional: Different donation amounts with different links
 export const DONATION_LINKS = {
