@@ -6,12 +6,14 @@ interface DonateButtonProps {
   className?: string;
   children?: React.ReactNode;
   variant?: 'primary' | 'secondary';
+  size?: 'normal' | 'large';
 }
 
 export default function DonateButton({ 
   className = '', 
   children = 'Donate',
-  variant = 'primary'
+  variant = 'primary',
+  size = 'normal'
 }: DonateButtonProps) {
   const handleDonateClick = () => {
     // Track donation click if configured
@@ -29,7 +31,12 @@ export default function DonateButton({
   };
 
   // Base styles for both variants
-  const baseStyles = 'transition font-semibold cursor-pointer';
+  const baseStyles = 'rounded-full transition font-semibold cursor-pointer';
+  
+  // Size styles
+  const sizeStyles = size === 'large' 
+    ? 'px-10 py-4 text-lg'
+    : 'px-6 py-2';
   
   // Variant-specific styles
   const variantStyles = variant === 'primary' 
@@ -39,7 +46,7 @@ export default function DonateButton({
   return (
     <button 
       onClick={handleDonateClick}
-      className={`${baseStyles} ${variantStyles} ${className}`}
+      className={`${baseStyles} ${sizeStyles} ${variantStyles} ${className}`}
     >
       {children}
     </button>
